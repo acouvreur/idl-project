@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: smarthome.dsl.tests
+Bundle-ManifestVersion: 2
+Bundle-Name: smarthome.dsl.tests
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: smarthome.dsl.tests; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: smarthome.dsl,
+ smarthome,
+ org.junit;bundle-version="4.12.0",
+ org.eclipse.xtext.testing,
+ org.eclipse.xtext.xbase.testing,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0"
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: smarthome.dsl.tests;x-internal=true
+

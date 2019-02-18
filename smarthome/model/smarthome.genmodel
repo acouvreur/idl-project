@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/smarthome/src-gen" creationIcons="false" editDirectory="/smarthome.edit/src-gen"
+    editorDirectory="/smarthome.editor/src-gen" modelPluginID="smarthome" modelName="Smarthome"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" codeFormatting="true"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>smarthome.ecore</foreignModel>
+  <testsDirectory xsi:nil="true"/>
+  <genPackages prefix="Smarthome" disposableProviderFactory="true" ecorePackage="smarthome.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="smarthome.ecore#//Activity">
+      <genEnumLiterals ecoreEnumLiteral="smarthome.ecore#//Activity/standing"/>
+      <genEnumLiterals ecoreEnumLiteral="smarthome.ecore#//Activity/laying"/>
+      <genEnumLiterals ecoreEnumLiteral="smarthome.ecore#//Activity/sitting"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="smarthome.ecore#//Operator">
+      <genEnumLiterals ecoreEnumLiteral="smarthome.ecore#//Operator/superior"/>
+      <genEnumLiterals ecoreEnumLiteral="smarthome.ecore#//Operator/inferior"/>
+      <genEnumLiterals ecoreEnumLiteral="smarthome.ecore#//Operator/equal"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="smarthome.ecore#//Precision">
+      <genEnumLiterals ecoreEnumLiteral="smarthome.ecore#//Precision/ms"/>
+      <genEnumLiterals ecoreEnumLiteral="smarthome.ecore#//Precision/s"/>
+      <genEnumLiterals ecoreEnumLiteral="smarthome.ecore#//Precision/m"/>
+    </genEnums>
+    <genClasses ecoreClass="smarthome.ecore#//Home">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smarthome.ecore#//Home/rooms"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smarthome.ecore#//Home/persons"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smarthome.ecore#//Home/patterns"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smarthome.ecore#//Home/fileEvents"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference smarthome.ecore#//Home/monitoredEntities"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="smarthome.ecore#//NamedEntity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smarthome.ecore#//NamedEntity/name"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="smarthome.ecore#//Sensor"/>
+    <genClasses ecoreClass="smarthome.ecore#//AnalogSensor"/>
+    <genClasses ecoreClass="smarthome.ecore#//DigitalSensor"/>
+    <genClasses ecoreClass="smarthome.ecore#//CSVSensor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smarthome.ecore#//CSVSensor/file"/>
+    </genClasses>
+    <genClasses ecoreClass="smarthome.ecore#//Tag"/>
+    <genClasses ecoreClass="smarthome.ecore#//Room">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smarthome.ecore#//Room/sensors"/>
+    </genClasses>
+    <genClasses ecoreClass="smarthome.ecore#//Pattern">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smarthome.ecore#//Pattern/rules"/>
+    </genClasses>
+    <genClasses ecoreClass="smarthome.ecore#//Rule">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smarthome.ecore#//Rule/predicates"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smarthome.ecore#//Rule/duration"/>
+    </genClasses>
+    <genClasses ecoreClass="smarthome.ecore#//Person">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smarthome.ecore#//Person/ankleLeft"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smarthome.ecore#//Person/ankleRight"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smarthome.ecore#//Person/belt"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference smarthome.ecore#//Person/chest"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="smarthome.ecore#//Predicate"/>
+    <genClasses ecoreClass="smarthome.ecore#//SensorPredicate">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference smarthome.ecore#//SensorPredicate/sensor"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smarthome.ecore#//SensorPredicate/operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smarthome.ecore#//SensorPredicate/value"/>
+    </genClasses>
+    <genClasses ecoreClass="smarthome.ecore#//PersonPredicate">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference smarthome.ecore#//PersonPredicate/person"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smarthome.ecore#//PersonPredicate/activity"/>
+    </genClasses>
+    <genClasses ecoreClass="smarthome.ecore#//Duration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smarthome.ecore#//Duration/time"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute smarthome.ecore#//Duration/precision"/>
+    </genClasses>
+    <genClasses ecoreClass="smarthome.ecore#//Mode"/>
+  </genPackages>
+</genmodel:GenModel>

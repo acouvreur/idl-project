@@ -1,0 +1,42 @@
+
+Home {
+	eventFile "eventFile.csv"
+	rooms{
+		Room "Bedroom" {
+				AnalogSensor "bed",
+				DigitalSensor "door"
+		},
+		Room "Bathroom" {
+				DigitalSensor "door",
+				DigitalSensor "toilet",
+				DigitalSensor "flush",
+				DigitalSensor "shower"
+		}
+	}
+	
+	persons {
+		Person "Alexis" { 
+			left-ankle ID "01" 
+			right-ankle ID "02"
+			belt ID "03"
+			chest ID "04"
+		}
+	}
+	
+	patterns {
+		Pattern "Sleeping" {
+			{
+				(Alexis is laying and "Bedroom.bed" = 1.0) since 10 minutes
+			}
+		},
+		Pattern "Dead" {
+			{
+				(Alexis is laying and "Bedroom.bed" = 0.0) since 10 minutes
+			}, {
+				("Bedroom.door" = 0.0) since 60 minutes
+			}
+		}
+	}
+	
+	start
+}
